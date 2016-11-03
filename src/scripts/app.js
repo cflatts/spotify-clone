@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
+import HomeView from './views/HomeView'
 
 // var ACCESS_TOKEN = '0a47ab8866304e82a9112a1e31404b57'
 
@@ -33,11 +34,11 @@ const app = function() {
         },
 
         _handleHome: function() {
-
+            ReactDOM.render(<HomeView />, document.querySelector('.container'))
         },
 
         _handleArtistSearch: function(searchTerm) {
-            var albumsCollection = new AlbumsCollection()
+
         },
 
         _handleAlbumsView: function() {
