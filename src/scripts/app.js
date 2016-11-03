@@ -37,7 +37,7 @@ const app = function() {
         },
 
         _handleArtistSearch: function(searchTerm) {
-
+            var albumsCollection = new AlbumsCollection()
         },
 
         _handleAlbumsView: function() {
@@ -55,7 +55,6 @@ const app = function() {
         initialize: function() {
             Backbone.history.start()
         }
-
 
     })
     var appRouter = new AppRouter()
