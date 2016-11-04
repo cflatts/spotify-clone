@@ -10,6 +10,7 @@ import HomeView from './views/HomeView'
 
 // Get an Album's Tracks https://api.spotify.com/v1/albums/{id}/tracks
 // Get a single Album https://api.spotify.com/v1/albums/{id}
+// //beyonce id : 6vWDO969PvNqNYHIOW5v0m
 
 //Artist Collection
 
@@ -27,7 +28,6 @@ const app = function() {
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home': '_handleHome',
-            'artistSearch/:searchTerm': '_handleArtistSearch',
             'albumsView': '_handleAlbumsView',
             'handleAlbumDetailView': '_handleAlbumDetails',
             '*default': '_handleDefault'
@@ -35,10 +35,6 @@ const app = function() {
 
         _handleHome: function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
-        },
-
-        _handleArtistSearch: function(searchTerm) {
-
         },
 
         _handleAlbumsView: function() {
