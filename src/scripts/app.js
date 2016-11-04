@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import HomeView from './views/HomeView'
+import AlbumsView from './views/AlbumsView'
 
 // var ACCESS_TOKEN = '0a47ab8866304e82a9112a1e31404b57'
 
