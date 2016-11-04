@@ -28,7 +28,7 @@ const app = function() {
     var AppRouter = Backbone.Router.extend({
         routes: {
             'home': '_handleHome',
-            'albumsView': '_handleAlbumsView',
+            'albumsView/:searchTerm': '_handleAlbumsView',
             'handleAlbumDetailView': '_handleAlbumDetails',
             '*default': '_handleDefault'
         },
@@ -37,8 +37,16 @@ const app = function() {
             ReactDOM.render(<HomeView />, document.querySelector('.container'))
         },
 
-        _handleAlbumsView: function() {
+        _handleAlbumsView: function(searchTerm) {
+            var albumCollection = new AlbumsCollection()
 
+            albumCollection.fetch({
+                data: {
+                    q: searchTerm,
+                    type: album
+                }
+            })
+            ReactDOM.render(<AlbumsView />, document.querySelector('.container'))
         },
 
         _handleAlbumDetails: function() {
